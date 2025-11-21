@@ -1,0 +1,17 @@
+Here's a paraphrased version of the document:
+
+
+
+
+
+The novel aspect involves converting raw genome data into tokens using WTBCluster software. Instead of handling genomes as unbroken nucleotide chains, this approach produces protein-level tokens from translated genetic sequences, generates k-mer patterns from protein-coding regions, and groups similar protein families together—essentially creating a "vocabulary" from the collective genome. This parallels text processing methods like byte-pair encoding that break language into manageable units. The result is a tokenized representation where individual tokens encode meaningful biological features: complete genes, conserved protein structures, regulatory sequences, or transferable genetic elements.
+
+The second stage uses panBART software to construct a comprehensive pangenome—the full genetic repertoire across all A. baumannii strains. This encompasses genes universally present (core genome), genes appearing in some isolates (accessory genome), and strain-specific genes. The workflow generates matrices showing core and accessory gene distributions, builds network graphs depicting gene relationships across strains, identifies gene presence/absence patterns linked to resistance traits, and constructs attention-weighted networks revealing gene co-occurrence tendencies.
+
+Genes are categorized by prevalence: core genes (present in >95% of samples), soft-core genes (appearing in 15-95% of isolates), and accessory genes (found in <15%). This classification matters because resistance determinants typically inhabit the accessory genome, often residing on mobile DNA elements that transfer horizontally between bacteria, making them critical prediction targets.
+
+The core methodology employs a modified panBART transformer model specifically adapted for pangenome analysis. The architecture contains three interconnected components: an encoder using bidirectional transformers to process tokenized sequences with positional information preserved and multi-head attention mechanisms that assess gene importance relationships; a decoder performing autoregressive predictions through masked language modeling to infer missing genes from context; and a classification module distinguishing resistant from susceptible strains.
+
+Training proceeds through multiple phases for optimal learning. Initial pre-training on diverse bacterial pangenomes teaches general genome organization principles through transfer learning. Subsequent fine-tuning focuses specifically on A. baumannii resistance prediction. The multi-task learning framework trains the model to simultaneously predict overall resistance status, identify specific beta-lactamase variants, and determine whether resistance genes are chromosomal or plasmid-borne.
+
+Several innovative features set this approach apart: contextualized gene representations that capture how gene function varies with genetic neighborhood, attention mapping that reveals which genes drive resistance predictions, and graph neural network components modeling gene regulatory interactions and horizontal transfer events.
