@@ -4,22 +4,22 @@ A comprehensive implementation of transformer models for DNA sequence analysis w
 
 ## Features
 
-✅ **Robust FASTA Reading**
+**Robust FASTA Reading**
 - Support for gzipped and regular FASTA files
 - Automatic sequence ID parsing (e.g., V240_1 format)
 - Sequence statistics and batch processing
 
-✅ **Multiple Encoding Methods**
+**Multiple Encoding Methods**
 - **K-mer tokenization**: Overlapping or non-overlapping k-mers
 - **BPE tokenization**: Learned subword units for DNA
 - **One-hot encoding**: Direct base-level encoding with ambiguous base support
 
-✅ **Transformer Architecture**
+**Transformer Architecture**
 - Encoder-only transformer for masked language modeling
 - Support for both token-based and one-hot encoded inputs
 - Positional encoding and attention mechanisms
 
-✅ **Production-Ready**
+**Production-Ready**
 - Comprehensive error handling
 - Vocabulary saving/loading
 - Training/validation split
